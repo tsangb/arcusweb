@@ -79,13 +79,13 @@ limitations under the License.
     </div>
     {{#if device['web:therm:autoSupported']}}
       <li class="radio-wrapper">
-        <input type="radio" id="fan-auto-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanMode, ThermostatCapability.FANMODE_AUTO)">
+        <input type="radio" id="fan-auto-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanmode, ThermostatCapability.FANMODE_AUTO)">
         <label for="fan-auto-{{uniqueId}}">Auto</label>
         <div class="check"></div>
       </li>
     {{/if}}
     <li class="radio-wrapper">
-      <input type="radio" id="fan-on-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanMode, ThermostatCapability.FANMODE_ON)">
+      <input type="radio" id="fan-on-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanmode, ThermostatCapability.FANMODE_ON)">
       <label for="fan-on-{{uniqueId}}">On</label>
       <div class="check"></div>
     </li>
