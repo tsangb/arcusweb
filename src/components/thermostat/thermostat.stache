@@ -23,6 +23,9 @@ limitations under the License.
   </div>
 {{/if}}
 <div class="mode-wrapper {{#if scheduleEnabled}}not-active{{else}}active{{/if}}">
+  <div class="configurator-header">
+    <h4 class="config-title" id="configuration-title-orientation">Choose A Mode</h4>
+  </div>
   <ul>
     <li class="radio-wrapper has-configurator">
       {{#eq mode 'HEAT'}}
@@ -68,6 +71,22 @@ limitations under the License.
     <li class="radio-wrapper">
       <input type="radio" id="off-{{uniqueId}}" name="mode-{{uniqueId}}" {($checked)}="equal(~mode, ThermostatCapability.HVACMODE_OFF)">
       <label for="off-{{uniqueId}}">Off</label>
+      <div class="check"></div>
+    </li>
+    <hr />
+    <div class="configurator-header">
+      <h4 class="config-title">Choose A Fan Mode</h4>
+    </div>
+    {{#if device['web:therm:autoSupported']}}
+      <li class="radio-wrapper">
+        <input type="radio" id="fan-auto-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanMode, ThermostatCapability.FANMODE_AUTO)">
+        <label for="fan-auto-{{uniqueId}}">Auto</label>
+        <div class="check"></div>
+      </li>
+    {{/if}}
+    <li class="radio-wrapper">
+      <input type="radio" id="fan-on-{{uniqueId}}" name="fan-mode-{{uniqueId}}" {($checked)}="equal(~fanMode, ThermostatCapability.FANMODE_ON)">
+      <label for="fan-on-{{uniqueId}}">On</label>
       <div class="check"></div>
     </li>
   </ul>
